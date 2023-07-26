@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'custom_appbar.dart';
+import 'note_item_gridview.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
@@ -8,17 +9,19 @@ class NotesViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          children: const [
-            SizedBox(
-              height: 50,
-            ),
-            CustomAppBar(),
-          ],
-        ),
+      body: Column(
+        children: const [
+          SizedBox(
+            height: 50,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24),
+            child: CustomAppBar(),
+          ),
+          Expanded(child: NoteItemGridView()),
+        ],
       ),
     );
   }
 }
+
