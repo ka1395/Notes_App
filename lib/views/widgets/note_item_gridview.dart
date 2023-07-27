@@ -11,7 +11,7 @@ class NoteItemGridView extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 15,
         crossAxisSpacing: 10,
-        childAspectRatio: 1 / 1,
-        children: List.generate(6, (index) =>const NoteItem()));
+        childAspectRatio: 1 / 1.1,
+        children: List.generate(6, (index) => const NoteItem()));
   }
 }

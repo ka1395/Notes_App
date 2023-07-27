@@ -6,6 +6,7 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width * .4,
       padding: const EdgeInsets.only(bottom: 20, left: 15),
       decoration: BoxDecoration(
           color: Colors.white.withOpacity(.15),
@@ -29,13 +30,13 @@ class NoteItem extends StatelessWidget {
               ),
               onPressed: () {},
             ),
-            subtitle:const  Padding(
-              padding:  EdgeInsets.only(top: 15),
-              child:  Text(
+            subtitle: const Padding(
+              padding: EdgeInsets.symmetric(vertical: 15),
+              child: Text(
                 overflow: TextOverflow.ellipsis,
                 maxLines: 3,
                 "Build your career with khaled ahemd ",
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 15),
               ),
             ),
           ),
