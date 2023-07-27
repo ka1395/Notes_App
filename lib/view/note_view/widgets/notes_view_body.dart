@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../constant.dart';
+import '../../../constant.dart';
 import 'add_note_bottomsheet.dart';
-import '../../help_widgets/custom_appbar.dart';
+import '../../../help_widgets/custom_appbar.dart';
 import 'note_item_gridview.dart';
 
 class NotesViewBody extends StatelessWidget {
