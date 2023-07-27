@@ -27,6 +27,7 @@ class NotesViewBody extends StatelessWidget {
         backgroundColor: primaryColor,
         onPressed: () {
           showModalBottomSheet(
+            
             context: context,
             builder: (context) {
               return const AddNoteBottmSheet();
