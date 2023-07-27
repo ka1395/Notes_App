@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../constant.dart';
 import 'custom_appbar.dart';
 import 'note_item_gridview.dart';
 
@@ -21,7 +22,15 @@ class NotesViewBody extends StatelessWidget {
           Expanded(child: NoteItemGridView()),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: primaryColor,
+        onPressed: () {},
+        child: const Icon(
+          Icons.add,
+          size: 35,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
-
