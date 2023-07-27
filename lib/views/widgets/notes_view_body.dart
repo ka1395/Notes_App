@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constant.dart';
+import 'add_note_bottomsheet.dart';
 import 'custom_appbar.dart';
 import 'note_item_gridview.dart';
 
@@ -24,7 +25,14 @@ class NotesViewBody extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: primaryColor,
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return const AddNoteBottmSheet();
+            },
+          );
+        },
         child: const Icon(
           Icons.add,
           size: 35,

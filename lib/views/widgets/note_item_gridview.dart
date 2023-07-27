@@ -7,11 +7,15 @@ class NoteItemGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-        crossAxisCount: 2,
-        mainAxisSpacing: 15,
-        crossAxisSpacing: 10,
-        childAspectRatio: 1 / 1.1,
-        children: List.generate(6, (index) => const NoteItem()));
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      child: GridView.count(
+          padding: EdgeInsets.zero,
+          crossAxisCount: 2,
+          mainAxisSpacing: 15,
+          crossAxisSpacing: 10,
+          childAspectRatio: 1 / 1.1,
+          children: List.generate(8, (index) => const NoteItem())),
+    );
   }
 }
