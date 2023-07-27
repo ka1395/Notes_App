@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../constant.dart';
 import 'add_note_bottomsheet.dart';
-import 'custom_appbar.dart';
+import '../../help_widgets/custom_appbar.dart';
 import 'note_item_gridview.dart';
 
 class NotesViewBody extends StatelessWidget {
@@ -18,7 +18,7 @@ class NotesViewBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24),
-            child: CustomAppBar(),
+            child: CustomAppBar(title: "Notes",iconData: Icons.search),
           ),
           Expanded(child: NoteItemGridView()),
         ],
