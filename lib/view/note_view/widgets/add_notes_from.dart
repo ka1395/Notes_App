@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/cubits/add_note_cubite.dart';
-import 'package:notes_app/cubits/add_note_stats.dart';
 import 'package:notes_app/models/note_model.dart';
 
+import '../../../cubits/add_note_cubite/add_note_cubite.dart';
+import '../../../cubits/add_note_cubite/add_note_stats.dart';
 import '../../../help_widgets/custom_text_field.dart';
 import 'custom_button.dart';
 
