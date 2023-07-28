@@ -13,7 +13,7 @@ class NotesViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NotesCubit(),
+      create: (context) => NotesCubit()..feachNotes(),
       child: Scaffold(
         body: Column(
           children: const [
@@ -31,7 +31,7 @@ class NotesViewBody extends StatelessWidget {
           backgroundColor: primaryColor,
           onPressed: () {
             showModalBottomSheet(
-               isScrollControlled: true,
+              isScrollControlled: true,
               context: context,
               builder: (context) {
                 return const AddNoteBottomSheet();

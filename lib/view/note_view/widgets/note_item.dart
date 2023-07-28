@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 
 import '../../edite_note_view/edite_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
-
+  const NoteItem({super.key, required this.note});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -27,10 +28,11 @@ class NoteItem extends StatelessWidget {
             ListTile(
               contentPadding: EdgeInsets.zero,
               minVerticalPadding: 18,
-              title: const Text(
-                "Flutter tips",
+              title: Text(
+                note.title,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               trailing: IconButton(
                 padding: EdgeInsets.zero,
@@ -40,13 +42,13 @@ class NoteItem extends StatelessWidget {
                 ),
                 onPressed: () {},
               ),
-              subtitle: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 15),
+              subtitle: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
                 child: Text(
+                  note.contnt,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 3,
-                  "Build your career with khaled ahemd ",
-                  style: TextStyle(fontSize: 15),
+                  style: const TextStyle(fontSize: 15),
                 ),
               ),
             ),
@@ -54,7 +56,7 @@ class NoteItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 15),
               child: Text(
-                "May 12,2023",
+                note.date,
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!

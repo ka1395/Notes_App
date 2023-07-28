@@ -8,14 +8,9 @@ import '../../models/note_model.dart';
 
 class NotesCubit extends Cubit<NotesStats> {
   NotesCubit() : super(NotesInitialStat());
+  List<NoteModel>? notes;
   feachNotes() {
-    try {
-      var hiveBox = Hive.box<NoteModel>(kNotesBox);
-      emit(NotesSucessStat(hiveBox.values.toList()));
-    } catch (e) {
-      debugPrint(e.toString());
-
-      emit(NotesFailureStat(e.toString()));
-    }
+    var hiveBox = Hive.box<NoteModel>(kNotesBox);
+    notes = hiveBox.values.toList();
   }
 }
