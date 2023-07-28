@@ -16,16 +16,18 @@ class NoteItemGridView extends StatelessWidget {
         List<NoteModel> notes =
             BlocProvider.of<NotesCubit>(context).notes ?? [];
         return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16),
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
           child: GridView.count(
               padding: EdgeInsets.zero,
               crossAxisCount: 2,
               mainAxisSpacing: 15,
               crossAxisSpacing: 10,
-              childAspectRatio: 1 / 1.1,
-              children:
-                  List.generate(notes.length, (index) =>  NoteItem(note:notes[index] ,))),
-
+              childAspectRatio: 1 / 1.16,
+              children: List.generate(
+                  notes.length,
+                  (index) => NoteItem(
+                        note: notes[index],
+                      ))),
         );
       },
     );
