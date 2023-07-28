@@ -40,7 +40,9 @@ class NoteItem extends StatelessWidget {
                   Icons.delete,
                   size: 24,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                },
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 15),
