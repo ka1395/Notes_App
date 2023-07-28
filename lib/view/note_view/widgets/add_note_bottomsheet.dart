@@ -5,8 +5,8 @@ import 'package:notes_app/cubits/add_note_stats.dart';
 import 'add_notes_from.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-class AddNoteBottmSheet extends StatelessWidget {
-  const AddNoteBottmSheet({super.key});
+class AddNoteBottomSheet extends StatelessWidget {
+  const AddNoteBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {

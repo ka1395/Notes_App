@@ -18,7 +18,7 @@ class NotesViewBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24),
-            child: CustomAppBar(title: "Notes",iconData: Icons.search),
+            child: CustomAppBar(title: "Notes", iconData: Icons.search),
           ),
           Expanded(child: NoteItemGridView()),
         ],
@@ -27,10 +27,9 @@ class NotesViewBody extends StatelessWidget {
         backgroundColor: primaryColor,
         onPressed: () {
           showModalBottomSheet(
-            
             context: context,
             builder: (context) {
-              return const AddNoteBottmSheet();
+              return const AddNoteBottomSheet();
             },
           );
         },

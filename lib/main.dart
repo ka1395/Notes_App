@@ -3,11 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notes_app/cubits/add_note_cubite.dart';
 
+import 'bloc_observer.dart';
 import 'constant.dart';
 import 'models/note_model.dart';
 import 'view/note_view/notes_view.dart';
 
 void main() async {
+  Bloc.observer = MyBlocObserver();
   await Hive.initFlutter();
   await Hive.openBox(kNotesBox);
   Hive.registerAdapter(NoteModelAdapter());
@@ -21,7 +23,9 @@ class NotesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-       BlocProvider(create: (context) => AddNoteCubit(),) 
+        BlocProvider(
+          create: (context) => AddNoteCubit(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
