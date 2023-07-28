@@ -11,6 +11,9 @@ class NotesCubit extends Cubit<NotesStats> {
   feachNotes() {
     var hiveBox = Hive.box<NoteModel>(kNotesBox);
     notes = hiveBox.values.toList();
+     // .where((element) {
+    //   return element.title.indexOf('e') >=0 ||element.contnt.indexOf('u') >=0;
+    // }).toList();
     emit(NotesSucssesStat());
   }
 }

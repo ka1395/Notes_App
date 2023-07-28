@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/view/search_view/search_view.dart';
 import '../../../constant.dart';
 import 'add_note_bottomsheet.dart';
 import '../../../help_widgets/custom_appbar.dart';
@@ -11,15 +12,25 @@ class NotesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: const [
-          SizedBox(
+        children: [
+          const SizedBox(
             height: 50,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24),
-            child: CustomAppBar(title: "Notes", iconData: Icons.search),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: CustomAppBar(
+              title: "Notes",
+              iconData: Icons.search,
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SearchView(),
+                    ));
+              },
+            ),
           ),
-          Expanded(child: NoteItemGridView()),
+          const Expanded(child: NoteItemGridView()),
         ],
       ),
       floatingActionButton: FloatingActionButton(
