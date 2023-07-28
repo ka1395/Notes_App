@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 
 import '../../edite_note_view/edite_note_view.dart';
@@ -42,6 +44,7 @@ class NoteItem extends StatelessWidget {
                 ),
                 onPressed: () {
                   note.delete();
+                  BlocProvider.of<NotesCubit>(context).feachNotes();
                 },
               ),
               subtitle: Padding(

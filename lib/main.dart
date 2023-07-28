@@ -4,6 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 import 'bloc_observer.dart';
 import 'constant.dart';
+import 'cubits/notes_cubit/notes_cubit.dart';
 import 'models/note_model.dart';
 import 'view/note_view/notes_view.dart';
 
@@ -21,14 +22,18 @@ class NotesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: Colors.black,
-        fontFamily: "Poppins",
+    return BlocProvider(
+            create: (context) => NotesCubit()..feachNotes(),
+
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: Colors.black,
+          fontFamily: "Poppins",
+        ),
+        home: const NotesView(),
       ),
-      home: const NotesView(),
     );
   }
 }

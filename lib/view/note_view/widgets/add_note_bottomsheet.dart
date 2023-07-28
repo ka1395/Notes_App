@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../cubits/add_note_cubite/add_note_cubite.dart';
 import '../../../cubits/add_note_cubite/add_note_stats.dart';
+import '../../../cubits/notes_cubit/notes_cubit.dart';
 import 'add_notes_from.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
@@ -20,6 +21,8 @@ class AddNoteBottomSheet extends StatelessWidget {
         child: BlocConsumer<AddNoteCubit, AddNoteStats>(
           listener: (context, state) {
             if (state is AddNoteSucessStat) {
+              BlocProvider.of<NotesCubit>(context).feachNotes();
+
               Navigator.pop(context);
             }
 

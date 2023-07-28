@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_stats.dart';
 
@@ -12,5 +11,6 @@ class NotesCubit extends Cubit<NotesStats> {
   feachNotes() {
     var hiveBox = Hive.box<NoteModel>(kNotesBox);
     notes = hiveBox.values.toList();
+    emit(NotesSucssesStat());
   }
 }
