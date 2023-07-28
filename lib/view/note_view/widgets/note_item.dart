@@ -15,12 +15,11 @@ class NoteItem extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) =>  EditeNoteView(note: note),
-
+              builder: (context) => EditeNoteView(note: note),
             ));
       },
       child: Container(
-        width: MediaQuery.of(context).size.width * .4,
+        height: MediaQuery.of(context).size.height * .23,
         padding: const EdgeInsets.only(bottom: 20, left: 15),
         decoration: BoxDecoration(
             color: Colors.white.withOpacity(.15),

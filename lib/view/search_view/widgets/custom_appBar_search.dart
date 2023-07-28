@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../note_view/widgets/custom_search_icon.dart';
-
 class CustomAppBarSearch extends StatelessWidget {
   const CustomAppBarSearch({super.key});
 
@@ -17,12 +15,12 @@ class CustomAppBarSearch extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             }),
-        SizedBox(
+       const  SizedBox(
           width: 15,
         ),
         const Text(
           "Search",
-          style: const TextStyle(fontSize: 28),
+          style:  TextStyle(fontSize: 28),
         ),
       ],
     );
